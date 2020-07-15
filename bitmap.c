@@ -10,7 +10,7 @@
 
 bitmap_t *bitmap_new(int width, int height)
 {
-    size_t bytes = DIV_ROUND_UP(width, 8) * height;
+    size_t bytes = sizeof(bitmap_t) + DIV_ROUND_UP(width, 8) * height;
     bitmap_t *bitmap = calloc(1, bytes);
     assert(bitmap != NULL);
 
